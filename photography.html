@@ -256,11 +256,12 @@
   .gallery-item[data-category] { transition: opacity 0.3s, transform 0.3s; }
   .gallery-item.hidden { display: none; }
 
-  /* SVG placeholder "photos" */
+  /* Photo images */
   .photo-placeholder {
     width: 100%;
     display: block;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    object-fit: cover;
   }
 
   .gallery-item:hover .photo-placeholder { transform: scale(1.04); }
@@ -539,459 +540,57 @@
 <!-- FILTER BAR -->
 <div class="filter-bar">
   <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="urban">Urban & Night</button>
   <button class="filter-btn" data-filter="nature">Nature</button>
-  <button class="filter-btn" data-filter="urban">Urban</button>
-  <button class="filter-btn" data-filter="travel">Travel</button>
   <button class="filter-btn" data-filter="macro">Macro</button>
-  <button class="filter-btn" data-filter="sky">Sky & Weather</button>
-  <button class="filter-btn" data-filter="bw">Black & White</button>
 </div>
 
 <!-- GALLERY -->
 <div class="gallery-section">
   <div class="gallery-grid" id="gallery">
 
-    <!-- NATURE -->
-    <div class="gallery-item" data-category="nature" data-title="Hudson Valley Fog" data-meta="Nature · Hudson Valley, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="n1a" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1b3a2e"/><stop offset="100%" stop-color="#0d1f18"/></linearGradient>
-          <linearGradient id="n1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9ab8a4" stop-opacity="0.2"/><stop offset="100%" stop-color="#9ab8a4" stop-opacity="0"/></linearGradient>
-        </defs>
-        <rect width="600" height="750" fill="url(#n1a)"/>
-        <!-- Trees silhouette -->
-        <rect x="0" y="520" width="600" height="230" fill="#0a1a12"/>
-        <path d="M0,540 Q30,490 60,540 Q90,480 120,540 Q150,488 180,540 Q210,485 240,540 Q270,490 300,540 Q330,482 360,540 Q390,485 420,540 Q450,490 480,540 Q510,485 540,540 Q570,490 600,540 L600,750 L0,750 Z" fill="#0d1f18"/>
-        <!-- Fog layers -->
-        <rect x="0" y="510" width="600" height="40" fill="url(#n1b)"/>
-        <ellipse cx="300" cy="520" rx="350" ry="25" fill="rgba(180,210,195,0.08)"/>
-        <!-- Moon -->
-        <circle cx="440" cy="120" r="55" fill="#c8b89a" opacity="0.9"/>
-        <circle cx="465" cy="100" r="55" fill="#1b3a2e"/>
-        <!-- Stars -->
-        <circle cx="80" cy="60" r="1.5" fill="white" opacity="0.8"/>
-        <circle cx="150" cy="90" r="1" fill="white" opacity="0.6"/>
-        <circle cx="220" cy="45" r="1.5" fill="white" opacity="0.7"/>
-        <circle cx="320" cy="75" r="1" fill="white" opacity="0.5"/>
-        <circle cx="520" cy="55" r="1.5" fill="white" opacity="0.8"/>
-        <circle cx="570" cy="130" r="1" fill="white" opacity="0.6"/>
-        <!-- River reflection -->
-        <ellipse cx="300" cy="620" rx="200" ry="20" fill="rgba(200,184,154,0.08)"/>
-      </svg>
+    <!-- 1: Rain street - urban night -->
+    <div class="gallery-item" data-category="urban" data-title="Rain on Pearl Street" data-meta="Urban · Albany, NY · April 2019">
+      <img class="photo-placeholder" src="photo_rain_street.jpg" alt="Rainy night street scene with neon reflections in Albany, NY"/>
       <div class="gallery-item-overlay">
-        <div class="overlay-title">Hudson Valley Fog</div>
-        <div class="overlay-meta">Nature · Hudson Valley, NY</div>
-      </div>
-    </div>
-
-    <!-- URBAN -->
-    <div class="gallery-item" data-category="urban" data-title="Albany Capitol at Dusk" data-meta="Urban · Albany, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="u1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1025"/><stop offset="60%" stop-color="#3d1f0a"/><stop offset="100%" stop-color="#1a0d05"/></linearGradient>
-        </defs>
-        <rect width="600" height="500" fill="url(#u1)"/>
-        <!-- Building silhouette -->
-        <rect x="150" y="200" width="300" height="250" fill="#0d0a12"/>
-        <!-- Dome -->
-        <ellipse cx="300" cy="200" rx="80" ry="30" fill="#120e1a"/>
-        <path d="M220,200 Q300,130 380,200" fill="#120e1a"/>
-        <!-- Windows lit -->
-        <rect x="170" y="240" width="15" height="20" fill="rgba(255,200,80,0.7)" rx="1"/>
-        <rect x="200" y="240" width="15" height="20" fill="rgba(255,200,80,0.5)" rx="1"/>
-        <rect x="370" y="240" width="15" height="20" fill="rgba(255,200,80,0.6)" rx="1"/>
-        <rect x="340" y="240" width="15" height="20" fill="rgba(255,200,80,0.4)" rx="1"/>
-        <rect x="230" y="270" width="15" height="20" fill="rgba(255,200,80,0.8)" rx="1"/>
-        <rect x="280" y="270" width="15" height="20" fill="rgba(255,200,80,0.6)" rx="1"/>
-        <rect x="340" y="270" width="15" height="20" fill="rgba(255,200,80,0.7)" rx="1"/>
-        <!-- Foreground road -->
-        <rect x="0" y="420" width="600" height="80" fill="#0a0812"/>
-        <!-- Street lights -->
-        <line x1="120" y1="380" x2="120" y2="420" stroke="rgba(255,200,80,0.5)" stroke-width="2"/>
-        <circle cx="120" cy="378" r="5" fill="rgba(255,200,80,0.8)"/>
-        <line x1="480" y1="380" x2="480" y2="420" stroke="rgba(255,200,80,0.5)" stroke-width="2"/>
-        <circle cx="480" cy="378" r="5" fill="rgba(255,200,80,0.8)"/>
-        <!-- Glow -->
-        <ellipse cx="300" cy="420" rx="200" ry="15" fill="rgba(255,160,40,0.07)"/>
-      </svg>
-      <div class="gallery-item-overlay">
-        <div class="overlay-title">Albany Capitol at Dusk</div>
+        <div class="overlay-title">Rain on Pearl Street</div>
         <div class="overlay-meta">Urban · Albany, NY</div>
       </div>
     </div>
 
-    <!-- TRAVEL -->
-    <div class="gallery-item" data-category="travel" data-title="Dhaka Street Scene" data-meta="Travel · Dhaka, Bangladesh">
-      <svg class="photo-placeholder" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="t1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5c3d1e"/><stop offset="100%" stop-color="#2a1a08"/></linearGradient>
-        </defs>
-        <rect width="600" height="800" fill="url(#t1)"/>
-        <!-- Sky -->
-        <rect width="600" height="300" fill="#c8851a" opacity="0.6"/>
-        <rect width="600" height="200" fill="#e8a830" opacity="0.3"/>
-        <!-- Buildings -->
-        <rect x="0" y="180" width="140" height="620" fill="#1e120a"/>
-        <rect x="460" y="150" width="140" height="650" fill="#1a0f08"/>
-        <rect x="120" y="250" width="100" height="550" fill="#241508"/>
-        <rect x="380" y="220" width="110" height="580" fill="#1f1308"/>
-        <!-- Window grids -->
-        <rect x="10" y="200" width="20" height="15" fill="rgba(255,180,60,0.5)" rx="1"/>
-        <rect x="40" y="200" width="20" height="15" fill="rgba(255,180,60,0.3)" rx="1"/>
-        <rect x="10" y="230" width="20" height="15" fill="rgba(255,180,60,0.6)" rx="1"/>
-        <rect x="470" y="180" width="20" height="15" fill="rgba(255,180,60,0.5)" rx="1"/>
-        <rect x="500" y="180" width="20" height="15" fill="rgba(255,180,60,0.7)" rx="1"/>
-        <!-- Street -->
-        <rect x="0" y="620" width="600" height="180" fill="#160e06"/>
-        <!-- Rickshaws shapes -->
-        <ellipse cx="200" cy="660" rx="35" ry="18" fill="#c8401a" opacity="0.8"/>
-        <ellipse cx="380" cy="650" rx="28" ry="15" fill="#2a7a3a" opacity="0.7"/>
-        <!-- People silhouettes -->
-        <ellipse cx="280" cy="645" rx="8" ry="18" fill="#0d0806"/>
-        <ellipse cx="310" cy="648" rx="7" ry="16" fill="#0d0806"/>
-        <!-- Sun -->
-        <circle cx="300" cy="100" r="50" fill="#e8a830" opacity="0.7"/>
-        <circle cx="300" cy="100" r="35" fill="#f0c050" opacity="0.9"/>
-      </svg>
+    <!-- 2: Empire State Plaza night reflection -->
+    <div class="gallery-item" data-category="urban" data-title="Empire State Plaza, Mirrored" data-meta="Urban · Albany, NY · June 2019">
+      <img class="photo-placeholder" src="photo_empire_state_plaza.jpg" alt="Empire State Plaza buildings and reflecting pool at night"/>
       <div class="gallery-item-overlay">
-        <div class="overlay-title">Dhaka Street Scene</div>
-        <div class="overlay-meta">Travel · Dhaka, Bangladesh</div>
+        <div class="overlay-title">Empire State Plaza, Mirrored</div>
+        <div class="overlay-meta">Urban · Albany, NY</div>
       </div>
     </div>
 
-    <!-- MACRO -->
-    <div class="gallery-item" data-category="macro" data-title="Circuit Topography" data-meta="Macro · IBM Lab, Albany">
-      <svg class="photo-placeholder" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="m1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#0a1520"/><stop offset="100%" stop-color="#0d2035"/></linearGradient>
-        </defs>
-        <rect width="600" height="600" fill="url(#m1)"/>
-        <!-- Circuit traces -->
-        <path d="M50,300 h100 v-80 h200 v80 h150" stroke="#00a8e0" stroke-width="2" fill="none" opacity="0.6"/>
-        <path d="M50,350 h80 v60 h300 v-60 h120" stroke="#00a8e0" stroke-width="1.5" fill="none" opacity="0.4"/>
-        <path d="M150,100 v80 h80 v240 h-80 v80" stroke="#c8401a" stroke-width="2" fill="none" opacity="0.5"/>
-        <path d="M450,80 v100 h-100 v240 h100 v100" stroke="#c8401a" stroke-width="1.5" fill="none" opacity="0.4"/>
-        <!-- Pads -->
-        <rect x="270" y="260" width="60" height="80" rx="4" fill="rgba(0,168,224,0.15)" stroke="rgba(0,168,224,0.5)" stroke-width="1.5"/>
-        <rect x="140" y="120" width="40" height="40" rx="3" fill="rgba(200,64,26,0.15)" stroke="rgba(200,64,26,0.5)" stroke-width="1.5"/>
-        <rect x="420" y="420" width="40" height="40" rx="3" fill="rgba(200,64,26,0.15)" stroke="rgba(200,64,26,0.5)" stroke-width="1.5"/>
-        <!-- Via holes -->
-        <circle cx="150" cy="300" r="8" fill="none" stroke="rgba(0,168,224,0.7)" stroke-width="1.5"/>
-        <circle cx="450" cy="300" r="8" fill="none" stroke="rgba(0,168,224,0.7)" stroke-width="1.5"/>
-        <circle cx="300" cy="150" r="6" fill="none" stroke="rgba(200,64,26,0.7)" stroke-width="1.5"/>
-        <circle cx="300" cy="450" r="6" fill="none" stroke="rgba(200,64,26,0.7)" stroke-width="1.5"/>
-        <!-- Central IC -->
-        <rect x="230" y="230" width="140" height="140" rx="6" fill="rgba(26,37,64,0.8)" stroke="rgba(0,168,224,0.4)" stroke-width="2"/>
-        <text x="300" y="308" text-anchor="middle" font-family="monospace" font-size="11" fill="rgba(0,168,224,0.6)">2NM</text>
-        <!-- Glow -->
-        <circle cx="300" cy="300" r="100" fill="rgba(0,168,224,0.04)"/>
-      </svg>
+    <!-- 3: Fall river - nature/travel portrait -->
+    <div class="gallery-item" data-category="nature" data-title="Autumn Creek, White Mountains" data-meta="Nature · New Hampshire">
+      <img class="photo-placeholder" src="photo_fall_river.jpg" alt="Rocky creek surrounded by autumn foliage in the White Mountains, NH"/>
       <div class="gallery-item-overlay">
-        <div class="overlay-title">Circuit Topography</div>
-        <div class="overlay-meta">Macro · IBM Lab, Albany</div>
+        <div class="overlay-title">Autumn Creek, White Mountains</div>
+        <div class="overlay-meta">Nature · New Hampshire</div>
       </div>
     </div>
 
-    <!-- SKY -->
-    <div class="gallery-item" data-category="sky" data-title="Upstate Thunderhead" data-meta="Sky & Weather · Delmar, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="s1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1a0d35"/>
-            <stop offset="40%" stop-color="#3d2060"/>
-            <stop offset="70%" stop-color="#7a3520"/>
-            <stop offset="100%" stop-color="#c8401a" stop-opacity="0.5"/>
-          </linearGradient>
-        </defs>
-        <rect width="600" height="450" fill="url(#s1)"/>
-        <!-- Storm cloud shapes -->
-        <ellipse cx="300" cy="150" rx="240" ry="100" fill="rgba(40,25,60,0.9)"/>
-        <ellipse cx="200" cy="170" rx="160" ry="80" fill="rgba(30,18,48,0.95)"/>
-        <ellipse cx="400" cy="160" rx="180" ry="90" fill="rgba(35,22,55,0.92)"/>
-        <ellipse cx="300" cy="180" rx="280" ry="60" fill="rgba(20,12,35,0.98)"/>
-        <!-- Lightning -->
-        <path d="M310,130 l-18,45 l12,0 l-22,55" stroke="#fff8b0" stroke-width="2.5" fill="none" opacity="0.9"/>
-        <path d="M310,130 l-18,45 l12,0 l-22,55" stroke="#ffe050" stroke-width="1" fill="none" opacity="0.5"/>
-        <!-- Ground glow -->
-        <ellipse cx="295" cy="390" rx="180" ry="30" fill="rgba(255,220,80,0.12)"/>
-        <!-- Horizon / field -->
-        <rect x="0" y="370" width="600" height="80" fill="#0d0a05"/>
-        <path d="M0,370 Q150,355 300,370 Q450,385 600,370 L600,450 L0,450 Z" fill="#0a0805"/>
-      </svg>
+    <!-- 4: Cherry blossom - nature/urban -->
+    <div class="gallery-item" data-category="nature" data-title="Cherry Blossom, Brooklyn" data-meta="Nature · Brooklyn, NY · April 2019">
+      <img class="photo-placeholder" src="photo_cherry_blossom.jpg" alt="Cherry blossom branch in foreground with Brooklyn street behind"/>
       <div class="gallery-item-overlay">
-        <div class="overlay-title">Upstate Thunderhead</div>
-        <div class="overlay-meta">Sky & Weather · Delmar, NY</div>
+        <div class="overlay-title">Cherry Blossom, Brooklyn</div>
+        <div class="overlay-meta">Nature · Brooklyn, NY</div>
       </div>
     </div>
 
-    <!-- B&W -->
-    <div class="gallery-item" data-category="bw" data-title="Lone Pine, Thacher Park" data-meta="Black & White · Altamont, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="bw1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ddd9d2"/><stop offset="100%" stop-color="#1a1814"/></linearGradient>
-        </defs>
-        <rect width="600" height="900" fill="url(#bw1)"/>
-        <!-- Sky texture -->
-        <rect width="600" height="500" fill="#c8c4bc" opacity="0.4"/>
-        <!-- Clouds -->
-        <ellipse cx="200" cy="120" rx="160" ry="50" fill="rgba(240,238,234,0.6)"/>
-        <ellipse cx="420" cy="160" rx="130" ry="40" fill="rgba(240,238,234,0.5)"/>
-        <!-- Ground -->
-        <rect x="0" y="700" width="600" height="200" fill="#1a1814"/>
-        <path d="M0,700 Q300,680 600,700 L600,900 L0,900 Z" fill="#141210"/>
-        <!-- Tree trunk -->
-        <rect x="280" y="200" width="40" height="500" fill="#0e0c0a"/>
-        <!-- Branches -->
-        <path d="M300,200 L180,350" stroke="#0e0c0a" stroke-width="12" stroke-linecap="round"/>
-        <path d="M300,250 L420,360" stroke="#0e0c0a" stroke-width="10" stroke-linecap="round"/>
-        <path d="M300,320 L160,420" stroke="#0e0c0a" stroke-width="8" stroke-linecap="round"/>
-        <path d="M300,350 L430,430" stroke="#0e0c0a" stroke-width="7" stroke-linecap="round"/>
-        <path d="M300,420 L170,490" stroke="#0e0c0a" stroke-width="6" stroke-linecap="round"/>
-        <path d="M300,450 L430,500" stroke="#0e0c0a" stroke-width="5" stroke-linecap="round"/>
-        <!-- Foliage dots suggestion -->
-        <circle cx="170" cy="340" r="35" fill="#1a1814" opacity="0.8"/>
-        <circle cx="430" cy="350" r="30" fill="#1a1814" opacity="0.8"/>
-        <circle cx="150" cy="410" r="28" fill="#1a1814" opacity="0.7"/>
-        <circle cx="440" cy="420" r="26" fill="#1a1814" opacity="0.7"/>
-      </svg>
+    <!-- 5: Dew drops macro -->
+    <div class="gallery-item" data-category="macro" data-title="World in a Drop" data-meta="Macro · May 2019">
+      <img class="photo-placeholder" src="photo_dew_drops.jpg" alt="Two water droplets on a green leaf reflecting surroundings"/>
       <div class="gallery-item-overlay">
-        <div class="overlay-title">Lone Pine, Thacher Park</div>
-        <div class="overlay-meta">Black & White · Altamont, NY</div>
-      </div>
-    </div>
-
-    <!-- TRAVEL -->
-    <div class="gallery-item" data-category="travel" data-title="Chittagong Harbor" data-meta="Travel · Chittagong, Bangladesh">
-      <svg class="photo-placeholder" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="t2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a3a5c"/><stop offset="55%" stop-color="#0d5f7a"/><stop offset="100%" stop-color="#0a1f2d"/></linearGradient>
-        </defs>
-        <rect width="600" height="480" fill="url(#t2)"/>
-        <!-- Water -->
-        <rect x="0" y="280" width="600" height="200" fill="#081828"/>
-        <!-- Reflections -->
-        <line x1="0" y1="300" x2="600" y2="300" stroke="rgba(100,180,220,0.08)" stroke-width="2"/>
-        <line x1="0" y1="320" x2="600" y2="320" stroke="rgba(100,180,220,0.06)" stroke-width="1.5"/>
-        <line x1="0" y1="340" x2="600" y2="340" stroke="rgba(100,180,220,0.05)" stroke-width="1"/>
-        <!-- Ship 1 -->
-        <path d="M80,240 h280 l30,40 h-340 Z" fill="#1a2a3a"/>
-        <rect x="120" y="180" width="60" height="60" fill="#1a2a3a"/>
-        <rect x="200" y="160" width="40" height="80" fill="#152030"/>
-        <!-- Ship 2 (smaller, far) -->
-        <path d="M420,260 h120 l12,20 h-140 Z" fill="#152535"/>
-        <rect x="450" y="230" width="30" height="30" fill="#152535"/>
-        <!-- Crane -->
-        <line x1="50" y1="60" x2="50" y2="260" stroke="#0d1a28" stroke-width="6"/>
-        <line x1="50" y1="80" x2="160" y2="80" stroke="#0d1a28" stroke-width="4"/>
-        <line x1="160" y1="80" x2="160" y2="200" stroke="#0d1a28" stroke-width="3"/>
-        <!-- Sunset -->
-        <circle cx="300" cy="160" r="40" fill="#e89030" opacity="0.6"/>
-        <ellipse cx="300" cy="290" rx="80" ry="12" fill="rgba(232,144,48,0.15)"/>
-        <!-- Mast lights -->
-        <circle cx="220" cy="158" r="4" fill="#ffdd80" opacity="0.9"/>
-        <circle cx="450" cy="228" r="3" fill="#ffdd80" opacity="0.7"/>
-      </svg>
-      <div class="gallery-item-overlay">
-        <div class="overlay-title">Chittagong Harbor</div>
-        <div class="overlay-meta">Travel · Chittagong, Bangladesh</div>
-      </div>
-    </div>
-
-    <!-- MACRO -->
-    <div class="gallery-item" data-category="macro" data-title="Morning Dew on Grass" data-meta="Macro · Delmar, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="mac2" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#1a3520"/><stop offset="100%" stop-color="#0a1810"/></linearGradient>
-          <radialGradient id="dew" cx="50%" cy="40%"><stop offset="0%" stop-color="rgba(200,230,255,0.9)"/><stop offset="100%" stop-color="rgba(120,180,220,0.3)"/></radialGradient>
-        </defs>
-        <rect width="600" height="700" fill="url(#mac2)"/>
-        <!-- Bokeh circles (background) -->
-        <circle cx="80" cy="150" r="60" fill="rgba(80,180,80,0.08)"/>
-        <circle cx="500" cy="100" r="90" fill="rgba(80,180,80,0.06)"/>
-        <circle cx="300" cy="200" r="70" fill="rgba(120,200,120,0.07)"/>
-        <circle cx="150" cy="400" r="50" fill="rgba(80,180,80,0.09)"/>
-        <circle cx="520" cy="500" r="80" fill="rgba(80,180,80,0.06)"/>
-        <!-- Grass blades -->
-        <path d="M100,700 Q110,400 130,300" stroke="#2a5c30" stroke-width="3" fill="none"/>
-        <path d="M200,700 Q190,380 180,260" stroke="#346638" stroke-width="4" fill="none"/>
-        <path d="M300,700 Q310,420 330,320" stroke="#2a5c30" stroke-width="3" fill="none"/>
-        <path d="M400,700 Q395,380 380,270" stroke="#3a7040" stroke-width="5" fill="none"/>
-        <path d="M500,700 Q510,410 530,310" stroke="#2a5c30" stroke-width="3" fill="none"/>
-        <path d="M150,700 Q140,450 120,340" stroke="#306835" stroke-width="2.5" fill="none"/>
-        <path d="M460,700 Q470,460 490,360" stroke="#306835" stroke-width="2.5" fill="none"/>
-        <!-- Dew drops on blades -->
-        <ellipse cx="130" cy="302" rx="10" ry="12" fill="url(#dew)" opacity="0.85"/>
-        <ellipse cx="180" cy="262" rx="13" ry="16" fill="url(#dew)" opacity="0.9"/>
-        <ellipse cx="330" cy="322" rx="9" ry="11" fill="url(#dew)" opacity="0.8"/>
-        <ellipse cx="380" cy="272" rx="11" ry="14" fill="url(#dew)" opacity="0.85"/>
-        <!-- Large featured drop -->
-        <ellipse cx="240" cy="420" rx="22" ry="28" fill="url(#dew)" opacity="0.95"/>
-        <ellipse cx="232" cy="412" rx="7" ry="9" fill="rgba(255,255,255,0.5)"/>
-        <!-- Specular highlights on drops -->
-        <circle cx="128" cy="298" r="2.5" fill="rgba(255,255,255,0.7)"/>
-        <circle cx="177" cy="257" r="3" fill="rgba(255,255,255,0.7)"/>
-      </svg>
-      <div class="gallery-item-overlay">
-        <div class="overlay-title">Morning Dew on Grass</div>
+        <div class="overlay-title">World in a Drop</div>
         <div class="overlay-meta">Macro · Delmar, NY</div>
-      </div>
-    </div>
-
-    <!-- NATURE -->
-    <div class="gallery-item" data-category="nature" data-title="Helderberg Escarpment" data-meta="Nature · Albany County, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 550" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="nat2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6a9ec0"/><stop offset="40%" stop-color="#a8c8e0"/><stop offset="100%" stop-color="#2a5a30"/></linearGradient>
-        </defs>
-        <rect width="600" height="550" fill="url(#nat2)"/>
-        <!-- Sky -->
-        <rect width="600" height="280" fill="#7ab0d0" opacity="0.5"/>
-        <!-- Clouds -->
-        <ellipse cx="150" cy="90" rx="120" ry="35" fill="rgba(255,255,255,0.6)"/>
-        <ellipse cx="420" cy="70" rx="140" ry="40" fill="rgba(255,255,255,0.55)"/>
-        <ellipse cx="300" cy="110" rx="100" ry="28" fill="rgba(255,255,255,0.5)"/>
-        <!-- Cliff face -->
-        <path d="M0,280 Q100,220 200,260 Q280,230 350,250 Q450,215 600,240 L600,550 L0,550 Z" fill="#3d6830"/>
-        <path d="M0,290 Q150,260 250,280 Q350,255 500,270 Q560,260 600,255 L600,550 L0,550 Z" fill="#2a5020"/>
-        <!-- Rock face (escarpment) -->
-        <path d="M160,550 L180,380 L220,350 L260,370 L280,320 L320,340 L350,280 L400,300 L440,550 Z" fill="#6a5038"/>
-        <path d="M180,380 L200,360 L240,380 L260,370 L280,330 L310,345 L350,290" stroke="rgba(80,60,40,0.5)" stroke-width="1" fill="none"/>
-        <!-- Foreground trees -->
-        <path d="M0,450 Q30,400 60,450 Q90,395 120,450 L120,550 L0,550 Z" fill="#1e4018"/>
-        <path d="M480,440 Q510,390 540,440 Q560,395 580,440 L600,440 L600,550 L480,550 Z" fill="#1e4018"/>
-        <!-- Mist -->
-        <rect x="0" y="340" width="600" height="20" fill="rgba(200,220,240,0.15)"/>
-      </svg>
-      <div class="gallery-item-overlay">
-        <div class="overlay-title">Helderberg Escarpment</div>
-        <div class="overlay-meta">Nature · Albany County, NY</div>
-      </div>
-    </div>
-
-    <!-- B&W -->
-    <div class="gallery-item" data-category="bw" data-title="Steel & Shadow" data-meta="Black & White · Albany, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-        <rect width="600" height="600" fill="#1a1814"/>
-        <!-- Bridge / structure -->
-        <line x1="0" y1="300" x2="600" y2="300" stroke="#5a5550" stroke-width="8"/>
-        <line x1="0" y1="308" x2="600" y2="308" stroke="#3a3530" stroke-width="3"/>
-        <!-- Vertical cables -->
-        <line x1="100" y1="80" x2="100" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <line x1="150" y1="60" x2="150" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <line x1="200" y1="50" x2="200" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <line x1="250" y1="45" x2="250" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <line x1="300" y1="40" x2="300" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <line x1="350" y1="45" x2="350" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <line x1="400" y1="50" x2="400" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <line x1="450" y1="60" x2="450" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <line x1="500" y1="80" x2="500" y2="300" stroke="#4a4540" stroke-width="2"/>
-        <!-- Main towers -->
-        <rect x="90" y="60" width="20" height="380" fill="#2a2520"/>
-        <rect x="490" y="60" width="20" height="380" fill="#2a2520"/>
-        <!-- Catenary cable -->
-        <path d="M100,80 Q300,40 500,80" stroke="#6a6560" stroke-width="5" fill="none"/>
-        <!-- Diagonal shadows -->
-        <line x1="0" y1="0" x2="100" y2="300" stroke="rgba(255,255,255,0.04)" stroke-width="40"/>
-        <line x1="600" y1="0" x2="500" y2="300" stroke="rgba(255,255,255,0.04)" stroke-width="40"/>
-        <!-- Road surface -->
-        <rect x="0" y="295" width="600" height="18" fill="#2e2820"/>
-        <!-- Reflection in water -->
-        <rect x="0" y="440" width="600" height="160" fill="#0e0c0a"/>
-        <line x1="0" y1="460" x2="600" y2="460" stroke="#2a2520" stroke-width="6" opacity="0.5"/>
-        <path d="M100,500 Q300,480 500,500" stroke="#4a4540" stroke-width="3" fill="none" opacity="0.3"/>
-        <!-- Light source -->
-        <circle cx="50" cy="30" r="20" fill="rgba(255,240,200,0.7)"/>
-        <circle cx="50" cy="30" r="50" fill="rgba(255,240,200,0.06)"/>
-      </svg>
-      <div class="gallery-item-overlay">
-        <div class="overlay-title">Steel & Shadow</div>
-        <div class="overlay-meta">Black & White · Albany, NY</div>
-      </div>
-    </div>
-
-    <!-- URBAN -->
-    <div class="gallery-item" data-category="urban" data-title="SUNY Lab Corridor" data-meta="Urban · Albany, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="urb2" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#e8e0d0"/><stop offset="100%" stop-color="#6a6050"/></linearGradient>
-          <linearGradient id="urb2b" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#f0e8d8"/><stop offset="100%" stop-color="#504840"/></linearGradient>
-        </defs>
-        <rect width="600" height="800" fill="#4a4038"/>
-        <!-- Ceiling -->
-        <path d="M0,0 L600,0 L450,200 L150,200 Z" fill="url(#urb2b)"/>
-        <!-- Floor -->
-        <path d="M0,800 L600,800 L450,500 L150,500 Z" fill="url(#urb2)"/>
-        <!-- Left wall -->
-        <path d="M0,0 L150,200 L150,500 L0,800 Z" fill="#5a5248"/>
-        <!-- Right wall -->
-        <path d="M600,0 L450,200 L450,500 L600,800 Z" fill="#5a5248"/>
-        <!-- Corridor center -->
-        <rect x="150" y="200" width="300" height="300" fill="#3a3228"/>
-        <!-- Perspective lines -->
-        <line x1="0" y1="0" x2="300" y2="350" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-        <line x1="600" y1="0" x2="300" y2="350" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-        <line x1="0" y1="800" x2="300" y2="350" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-        <line x1="600" y1="800" x2="300" y2="350" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-        <!-- Ceiling lights -->
-        <rect x="240" y="0" width="120" height="15" fill="rgba(255,240,200,0.9)"/>
-        <ellipse cx="300" cy="60" rx="120" ry="60" fill="rgba(255,240,200,0.08)"/>
-        <!-- Door at end -->
-        <rect x="230" y="260" width="140" height="190" rx="4" fill="#2a2420"/>
-        <circle cx="360" cy="358" r="5" fill="rgba(200,160,80,0.8)"/>
-        <!-- Floor tiles -->
-        <line x1="150" y1="300" x2="450" y2="300" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="150" y1="400" x2="450" y2="400" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <line x1="300" y1="200" x2="300" y2="500" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <!-- Person silhouette (far) -->
-        <ellipse cx="300" cy="268" rx="12" ry="28" fill="#1a1410"/>
-      </svg>
-      <div class="gallery-item-overlay">
-        <div class="overlay-title">SUNY Lab Corridor</div>
-        <div class="overlay-meta">Urban · Albany, NY</div>
-      </div>
-    </div>
-
-    <!-- SKY -->
-    <div class="gallery-item" data-category="sky" data-title="Milky Way Over the Catskills" data-meta="Sky & Weather · Catskill Mountains, NY">
-      <svg class="photo-placeholder" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="mw" cx="50%" cy="30%"><stop offset="0%" stop-color="#2a1a50"/><stop offset="60%" stop-color="#0d0a1e"/><stop offset="100%" stop-color="#050308"/></radialGradient>
-        </defs>
-        <rect width="600" height="700" fill="url(#mw)"/>
-        <!-- Milky Way band -->
-        <ellipse cx="300" cy="280" rx="80" ry="260" fill="rgba(180,160,220,0.08)" transform="rotate(-20 300 280)"/>
-        <ellipse cx="300" cy="280" rx="40" ry="240" fill="rgba(200,180,240,0.06)" transform="rotate(-20 300 280)"/>
-        <!-- Stars - scattered -->
-        <circle cx="50" cy="80" r="1.5" fill="white" opacity="0.9"/>
-        <circle cx="120" cy="45" r="1" fill="white" opacity="0.7"/>
-        <circle cx="80" cy="160" r="1.5" fill="white" opacity="0.8"/>
-        <circle cx="200" cy="30" r="1" fill="white" opacity="0.6"/>
-        <circle cx="180" cy="110" r="2" fill="white" opacity="0.9"/>
-        <circle cx="250" cy="75" r="1" fill="white" opacity="0.7"/>
-        <circle cx="320" cy="50" r="1.5" fill="white" opacity="0.8"/>
-        <circle cx="380" cy="90" r="1" fill="white" opacity="0.6"/>
-        <circle cx="440" cy="40" r="1.5" fill="white" opacity="0.9"/>
-        <circle cx="510" cy="120" r="1" fill="white" opacity="0.7"/>
-        <circle cx="560" cy="60" r="2" fill="white" opacity="0.8"/>
-        <circle cx="90" cy="250" r="1" fill="white" opacity="0.5"/>
-        <circle cx="160" cy="200" r="1.5" fill="white" opacity="0.6"/>
-        <circle cx="400" cy="150" r="1" fill="white" opacity="0.7"/>
-        <circle cx="480" cy="200" r="1.5" fill="white" opacity="0.6"/>
-        <circle cx="540" cy="250" r="1" fill="white" opacity="0.5"/>
-        <!-- More tiny stars -->
-        <circle cx="340" cy="130" r="0.8" fill="white" opacity="0.6"/>
-        <circle cx="280" cy="180" r="0.8" fill="white" opacity="0.5"/>
-        <circle cx="220" cy="160" r="0.8" fill="white" opacity="0.7"/>
-        <circle cx="460" cy="170" r="0.8" fill="white" opacity="0.6"/>
-        <!-- Mountain silhouette -->
-        <path d="M0,480 Q80,380 160,430 Q240,360 320,400 Q400,340 460,390 Q520,350 600,410 L600,700 L0,700 Z" fill="#050308"/>
-        <path d="M0,520 Q100,460 200,490 Q300,440 400,470 Q500,430 600,460 L600,700 L0,700 Z" fill="#030206"/>
-        <!-- Foreground treeline -->
-        <path d="M0,560 Q30,520 60,560 Q90,515 120,560 Q150,518 180,560 Q210,520 240,560 Q270,515 300,560 Q330,518 360,560 Q390,520 420,560 Q450,515 480,560 Q510,518 540,560 Q570,518 600,560 L600,700 L0,700 Z" fill="#020105"/>
-      </svg>
-      <div class="gallery-item-overlay">
-        <div class="overlay-title">Milky Way Over the Catskills</div>
-        <div class="overlay-meta">Sky & Weather · Catskill Mountains, NY</div>
       </div>
     </div>
 
@@ -1048,7 +647,7 @@
     <button class="lightbox-close" id="lb-close">✕ close</button>
     <button class="lightbox-nav lightbox-prev" id="lb-prev">&#8592;</button>
     <button class="lightbox-nav lightbox-next" id="lb-next">&#8594;</button>
-    <svg id="lb-img" class="lightbox-img" viewBox="0 0 600 600"></svg>
+    <img id="lb-img" class="lightbox-img" src="" alt=""/>
     <div class="lightbox-caption">
       <h3 id="lb-title"></h3>
       <p id="lb-meta"></p>
@@ -1104,9 +703,9 @@
   function showItem(idx) {
     const item = visibleItems[idx];
     if (!item) return;
-    const svg = item.querySelector('svg.photo-placeholder');
-    lbImg.setAttribute('viewBox', svg.getAttribute('viewBox'));
-    lbImg.innerHTML = svg.innerHTML;
+    const img = item.querySelector('img.photo-placeholder');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
     lbTitle.textContent = item.dataset.title;
     lbMeta.textContent  = item.dataset.meta;
   }
